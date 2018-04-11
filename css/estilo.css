@@ -1,0 +1,97 @@
+#logo{
+	padding: 4%;
+	margin-left:5%;
+
+}
+.index{
+	padding:1%;
+}
+#cadastro{
+padding:2%;
+	margin-left:10%;
+  margin-right:10%;
+  background-color: #F8F8FF;
+	font-size: 100%;
+
+}
+
+
+#termo_empresa_admin{
+	display: none;
+	padding: 2%;
+	margin-top:2%;
+	margin-left:10%;
+	margin-right: 10%;
+
+	background-color: #F8F8FF;
+	font-size: 90%;
+}
+#termo_cartorio_admin{
+	display: none;
+	padding: 2%;
+	margin-top:2%;
+	margin-left:10%;
+	margin-right: 10%;
+
+	background-color: #F8F8FF;
+	font-size: 90%;
+}
+#img2{
+	width:60%
+}
+#cad_h2{
+	font-size: 50px
+}
+
+#menu_vetical{
+	padding:2%;
+	width: 15%;
+	margin-left:2%;
+  background-color: #F8F8FF;
+}
+#home{
+
+
+	padding: 2%;
+	margin-top:2%;
+	margin-left:0%;
+	margin-right: 60%;
+	background-color: #F8F8FF;
+	font-size: 90%;
+
+}
+
+
+#controle{
+	display: none;
+	padding:2%;
+	width: 15%;
+	margin-left:2%;
+  background-color: #F8F8FF;
+}
+
+.dedo
+{
+	cursor: pointer;
+}
+
+#cad_Cartorio{
+
+	padding: 2%;
+	margin-top:2%;
+	margin-left:10%;
+	margin-right: 10%;
+
+	background-color: #F8F8FF;
+	font-size: 90%;
+}
+#cad_Empresa{
+
+	padding: 2%;
+	margin-top:2%;
+	margin-left:10%;
+	margin-right: 10%;
+
+	background-color: #F8F8FF;
+	font-size: 90%;
+}

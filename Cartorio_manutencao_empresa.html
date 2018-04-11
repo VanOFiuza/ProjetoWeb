@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+	integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+<script type="text/javascript" src="js/script.js"></script>
+<meta charset="utf-8">
+<title>Cartorio</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo03"
+			aria-controls="navbarTogglerDemo03" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="Cartorio.html">Cartorio Central</a>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+
+				<nav class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+						role="button" aria-haspopup="true" aria-expanded="false"><img
+						class="img-fluid" src="img/perfil.jpg" width="8%"></a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" data-toggle="modal"
+							data-target="#alterar_Cartorio" data-whatever="@mdo"> Dados
+							</a> <a class="dropdown-item" data-toggle="modal"
+							data-target="#alterar_senha" data-whatever="@mdo">Alterar
+							senha</a>
+							<a class="dropdown-item" data-toggle="modal"
+							data-target="#Termo" data-whatever="@mdo">Termo
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Sair</a>
+					</div>
+				</nav>
+			</form>
+		</div>
+	</nav>
+	</br>
+
+
+	<div class="row">
+
+    <div id="menu_vetical" class="container">
+
+
+      <div class="col">
+
+        <div class="nav flex-column nav-pills" id="v-pills-tab"
+          role="tablist" aria-orientation="vertical">
+          <a href="Cartorio.html" id="home_admin"class="nav-link active">Home</a> <a class="nav-link dropdown-toggle"
+            data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Manutenção</a>
+
+
+            <div class="dropdown-menu">
+              <a  href="Cartorio_manutencao_empresa.html" id="Manutencao_Empresa_admin" class="dropdown-item" >Empresa</a>
+              <a  href="Cartorio_manutencao_UserAdd.html"id="Manutencao_UserAdd_admin"class="dropdown-item">Usuário	Adicional</a>
+
+            </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+    <div id= "Manutencao_empresa_Cart" class="col">
+          <div class="col-md-6">
+               <div class="input-group h2">
+                   <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar empresas">
+                   <span class="input-group-btn">
+                           <button class="dedo btn btn-primary" type="submit">
+                               <span class="glyphicon glyphicon-search"></span>
+                           </button>
+                   </span>
+               </div>
+          </div>
+
+          <div id="list" class="row">
+          <div class="table-responsive col-md-12">
+              <table class="table table-striped" cellspacing="0" cellpadding="0">
+                  <thead>
+                      <tr>
+                          <th>Documento</th>
+                          <th>Razão Social</th>
+
+                          <th class="actions">Ações</th>
+                       </tr>
+                  </thead>
+                  <tbody>
+
+                      <tr>
+                          <td>1001</td>
+                          <td>Qually</td>
+
+                          <td class="actions">
+                            <form method="get" action="">
+                              <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#alterar_empresa" data-whatever="@mdo">alterar</button>
+                                <input type="submit" class="dedo btn btn-danger btn-xs"  value="Excluir" data-toggle="modal" data-target="#delete-modal">
+                            </form>
+                          </td>
+                      </tr>
+
+                  </tbody>
+               </table>
+
+           </div>
+      </div>
+
+
+
+
+</div>
+
+
+  <!-- MODALS-->
+	<!-- DADOS DO ADMINISTRAR-->
+  <div class="modal fade" id="alterar_Cartorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Dados</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputRazaoSocial">Razão Social</label>
+                <input type="text" class="form-control" id="txtRazaoSocial">
+              </div>
+            <div class="form-group col-md-6">
+              <label for="inputDocument">Documento</label>
+              <input type="text" class="form-control" id="txtDoc" placeholder="Documento">
+            </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputTelefone">Telefone</label>
+                <input type="text" class="form-control" id="txtTelefone" placeholder="Telefone">
+              </div>
+            </div>
+            <div class="form-row">
+           <div class="form-group col-md-6">
+            <label for="inputAddress">Endereço</label>
+            <input type="text" class="form-control" id="txtEndereco" placeholder="1234 Main St">
+            </div>
+            <div class="form-group  col-md-4">
+            <label for="inputBairro">Bairro</label>
+            <input type="text" class="form-control" id="txtBairro" >
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputUF">UF</label>
+              <input type="text" class="form-control" id="txtUF" placeholder="UF">
+            </div>
+          </div>
+            <div class="form-row">
+                 <div class="form-group col-md-6">
+                   <label for="inputCity">Cidade</label>
+                   <input type="text" class="form-control" id="txtCidade" placeholder="Cidade">
+                 </div>
+                 <div class="form-group col-md-6">
+                   <label for="inpuCEP">CEP</label>
+                   <input type="text" class="form-control" id="txtCEP" placeholder="00000 000">
+                 </div>
+           </div>
+           <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputDataAbetura">Data de Abertura</label>
+                  <input type="text" class="form-control" id="txtDataAbertura"  placeholder="00 00 0000">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputSite">Site</label>
+                  <input type="text" class="form-control" id="txtSite">
+                </div>
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlTextarea1">Descrição da Empresa</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+          </div>
+      </div>
+
+
+
+      </form>
+
+    <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+        </div>
+        </div>
+	<!-- ALTERAR SENHA-->
+	<div class="modal fade" id="alterar_senha" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Alteração Senha</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form>
+						<div class="form-group">
+							<label for="InputPassword">Senha</label> <input type="password"
+								id="type=" password"" class="form-control"
+								id="exampleInputPassword1">
+						</div>
+						<div class="form-group">
+							<label for="InputPassword1">Nova senha</label> <input
+								type="password" id="new_pwd" class="form-control"
+								id="exampleInputPassword1">
+						</div>
+						<div class="form-group">
+							<label for="InputPassword1">Comfirme</label> <input
+								type="password" id="comf_pwd" class="form-control"
+								id="exampleInputPassword1">
+						</div>
+
+
+
+					</form>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Sair</button>
+						<button type="button" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <!-- DADOS DO EMPRESA-->
+<div class="modal fade" id="alterar_empresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Dados</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputRazaoSocial">Razão Social</label>
+          <input type="text" class="form-control" id="txtRazaoSocial">
+        </div>
+      <div class="form-group col-md-6">
+        <label for="inputDocument">Documento</label>
+        <input type="text" class="form-control" id="txtDoc" placeholder="Documento">
+      </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputTelefone">Telefone</label>
+          <input type="text" class="form-control" id="txtTelefone" placeholder="Telefone">
+        </div>
+      </div>
+      <div class="form-row">
+     <div class="form-group col-md-6">
+      <label for="inputAddress">Endereço</label>
+      <input type="text" class="form-control" id="txtEndereco" placeholder="1234 Main St">
+      </div>
+      <div class="form-group  col-md-4">
+      <label for="inputBairro">Bairro</label>
+      <input type="text" class="form-control" id="txtBairro" >
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputUF">UF</label>
+        <input type="text" class="form-control" id="txtUF" placeholder="UF">
+      </div>
+    </div>
+
+      <div class="form-row">
+           <div class="form-group col-md-6">
+             <label for="inputCity">Cidade</label>
+             <input type="text" class="form-control" id="txtCidade" placeholder="Cidade">
+           </div>
+           <div class="form-group col-md-6">
+             <label for="inpuCEP">CEP</label>
+             <input type="text" class="form-control" id="txtCEP" placeholder="00000 000">
+           </div>
+     </div>
+     <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputDataAbetura"></label>
+            <input type="text" class="form-control" id="txtDataAbertura"  placeholder="00 00 0000">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputSite">Site</label>
+            <input type="text" class="form-control" id="txtSite">
+          </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Descrição da Empresa</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+    </div>
+
+  <div class="form-group row">
+     <div class="col-sm-10">
+         <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#termo_empresa" data-whatever="@mdo">Salvar</button>
+     </div>
+   </div>
+
+
+    </form>
+
+			<div class="modal-footer">
+		          <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+		          <button type="button" class="btn btn-primary">Salvar</button>
+		        </div>
+		      </div>
+		      </div>
+		      </div>
+		      </div>
+		      <div class="modal fade" id="Termo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		      <div class="modal-dialog" role="document">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h5 class="modal-title" id="exampleModalLabel">Termo</h5>
+		          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		            <span aria-hidden="true">&times;</span>
+		          </button>
+		        </div>
+		        <div class="modal-body">
+
+		    <fieldset disabled>
+		    <div class="form-group">
+		      <center><h2>TERMO</h2></center>
+
+		      <textarea class="form-control" id="exampleFormControlTextarea1" rows="20">
+		        TEMPO DE LEITURA: 2 MINUTOS
+
+		        Um site na internet é sempre uma oportunidade de negócio, que você pode conquistar ou desperdiçar. Rotineiramente esbarro em sites com a mensagem: site em manutenção, voltaremos em breve. Ou ainda pior, sites que acabaram de ir para internet e já nascem com a frase: site em construção!
+
+		        Por favor, para o seu bem e do seu negócio, não faça isso. Eu gravei um vídeo inclusive, que está no final deste artigo, falando mais detalhes sobre isso.
+
+		        Vou lhe dar 3 motivos para não fazer isso e mostrar os motivos pelos quais você nunca deveria colocar um site em construção (ou em manutenção) no ar.
+
+		        As pessoas não estão procurando um site em construção, mas sim um serviço ou produto. Se caírem no seu site, sequer vão lembrar o nome dele. Vão voltar para listagem de resultados de sua pesquisa e clicar em algum link que tenha o que eles precisam;
+		        É muito fácil sair de um site e entrar em outro (por mais óbvio que isso lhe pareça). Dificilmente você terá uma segunda chance com clientes novos;
+		        Nada é mais frustrante do que após buscas e mais buscas, não encontrarmos o que queremos. Além de perder o usuário, poderá ganhar detratores que resistirão a dar uma segunda chance ao seu site.</textarea>
+		    </div>
+		    </fieldset>
+
+
+		    </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="" data-whatever="@mdo">Download</button>
+		            <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="" data-whatever="@mdo">Upload</button>
+		              </div>
+		            </div>
+		            </div>
+		            </div>
+		            </div>
+
+
+</body>
+</html>
